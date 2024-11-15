@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con Múltiples Páginas</title>
+  <style>
+    .page { display: none; }
+    .active { display: block; }
+  </style>
+</head>
+<body>
+  <!-- Página 1: Datos Personales -->
+  <div id="page1" class="page active">
+    <h2>Datos Personales</h2>
+    <input type="text" id="nombre" placeholder="Nombre"><br>
+    <input type="number" id="edad" placeholder="Edad"><br>
+    <input type="text" id="direccion" placeholder="Dirección"><br>
+    <button onclick="nextPage(2)">Siguiente</button>
+  </div>
+
+  <!-- Página 2: Familiares -->
+  <div id="page2" class="page">
+    <h2>Familiares</h2>
+    <input type="text" id="nombreFamiliar" placeholder="Nombre del familiar"><br>
+    <input type="text" id="parentesco" placeholder="Parentesco"><br>
+    <input type="number" id="edadFamiliar" placeholder="Edad"><br>
+    <button onclick="addFamiliar()">Agregar Familiar</button><br>
+    <button onclick="nextPage(3)">Siguiente</button>
+  </div>
+
+  <!-- Página 3: Condiciones de Salud -->
+  <div id="page3" class="page">
+    <h2>Condiciones Pre-Existentes de Salud</h2>
+    <input type="text" id="enfermedad" placeholder="Enfermedad"><br>
+    <input type="text" id="tiempoEnfermedad" placeholder="Tiempo con la enfermedad"><br>
+    <button onclick="addCondicion()">Agregar Condición</button><br>
+    <button onclick="nextPage(4)">Siguiente</button>
+  </div>
+
+  <!-- Página 4: Internamientos -->
+  <div id="page4" class="page">
+    <h2>Internamientos Realizados</h2>
+    <input type="date" id="fechaInternamiento"><br>
+    <input type="text" id="centroMedico" placeholder="Centro Médico"><br>
+    <input type="text" id="diagnostico" placeholder="Diagnóstico"><br>
+    <button onclick="addInternamiento()">Agregar Internamiento</button><br>
+    <button onclick="nextPage(5)">Siguiente</button>
+  </div>
+
+  <!-- Página 5: Mostrar Datos -->
+  <div id="page5" class="page">
+    <h2>Datos Registrados</h2>
+    <pre id="resultado"></pre>
+    <button onclick="mostrarDatos()">Mostrar Datos</button>
+    <button onclick="resetForm()">Reiniciar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
